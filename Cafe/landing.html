@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roast Room</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="icon" href="./Images/Coffee.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <link href="path/to/bootstrap.css" rel="stylesheet">
+    <link href="path/to/custom.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="cafenav navbar navbar-expand-lg">
+        <div class="textnav container-fluid">
+            <img src="./Images/Coffee-removebg-preview.png" height="50px" alt="">
+            <a class="navbar-brand" href="#">Roast Room</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a id="home" class="nav-link active" aria-current="page" href="#">About Us</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a id="logout" class="nav-link" href="logout.php">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="intro">
+        <img class="beansimg" src="./Images/Coffeebeans-removebg-preview.png" alt="">
+        <div class="inttext">
+            <h2 class="brandwelcome">Welcome to the </h2>
+            <h1 class="brandtext">Roast Room</h1>
+            <p class="brandpara"><b>Coffee & more..</b></p>
+            <button id="scrlbtn">Explore Menu</button>
+        </div>
+        <div class="int1">
+            <img class="blogo" src="./Images/Coffee-removebg-preview.png" alt="">
+            <img class="coffeemug" src="./Images/CoffeeMugMain-removebg-preview.png" alt="">
+        </div>
+    </div>
+    <div id="allproducts">
+        <!-- cart -->
+        <div class="cart" id="cart">
+            <span>Cart</span>
+            <div class="counter" id="productCounter">0</div>
+            <div class="cart-items" id="cartItems">
+                <h2>Your Cart</h2>
+                <div class="cart-total">
+                    Total: $<span id="cartTotal">0.00</span>
+                </div>
+            </div>
+        </div>
+        <!-- products -->
+        <div id="line1">
+            <div class="product-card p1">
+                <img id="p1" src="./Products/HotCoffee.png" alt="Product Image">
+                <div class="product-name">Hot Coffee</div>
+                <div class="product-price">₹ 100/-</div>
+                <button class="add-to-cart-btn" onclick="addToCart('Hot Coffee',100)">Add to Cart</button>
+            </div>
+            <div class="product-card p2">
+                <img id="p2" src="./Products/Cappuccino.png" alt="Product Image">
+                <div class="product-name">Cappuccino</div>
+                <div class="product-price">₹ 120/-</div>
+                <button class="add-to-cart-btn" onclick="addToCart('Cappuccino',120)">Add to Cart</button>
+            </div>
+            <div class="product-card p3">
+                <img id="p3" src="./Products/Latte.png" alt="Product Image">
+                <div class="product-name">Latte</div>
+                <div class="product-price">₹ 130/-</div>
+                <button class="add-to-cart-btn" onclick="addToCart('Latte',130)">Add to Cart</button>
+            </div>
+            <div class="product-card p4">
+                <img id="p4" src="./Products/Macchiato.png" alt="Product Image">
+                <div class="product-name">Macchiato</div>
+                <div class="product-price">₹ 150/-</div>
+                <button class="add-to-cart-btn" onclick="addToCart('Macchiato',150)">Add to Cart</button>
+            </div>
+        </div>
+        <div id="line2">
+            <div class="product-card p5">
+                <img id="p5" src="./Products/IcedMocha.png" alt="Product Image">
+                <div class="product-name">Iced Mocha</div>
+                <div class="product-price">₹ 120/-</div>
+                <button class="add-to-cart-btn" onclick="addToCart('Iced Mocha',120)">Add to Cart</button>
+            </div>
+            <div class="product-card p6">
+                <img id="p6" src="./Products/Frappuccino.png" alt="Product Image">
+                <div class="product-name">Frappuccino</div>
+                <div class="product-price">₹ 140/-</div>
+                <button class="add-to-cart-btn" onclick="addToCart('Frappuccino',140)">Add to Cart</button>
+            </div>
+            <div class="product-card p7">
+                <img id="p7" src="./Products/NitroColdBrew.png" alt="Product Image">
+                <div class="product-name">Nitro Cold Brew</div>
+                <div class="product-price">₹ 160/-</div>
+                <button class="add-to-cart-btn" onclick="addToCart('Nitro CB',160)">Add to Cart</button>
+            </div>
+            <div class="product-card p8">
+                <img id="p8" src="./Products/Affogato.png" alt="Product Image">
+                <div class="product-name">Affogato</div>
+                <div class="product-price">₹ 200/-</div>
+                <button class="add-to-cart-btn" onclick="addToCart('Affogato',200)">Add to Cart</button>
+            </div>
+        </div>
+        <div id="line2">
+            <div class="product-card p9">
+                <img id="p9" src="./Products/Veg-Sandwich.png" alt="Product Image">
+                <div class="product-name">Vegetable Sandwich</div>
+                <div class="product-price">₹ 160/-</div>
+                <button class="add-to-cart-btn" onclick="addToCart('Veg. Sandwich',160)">Add to Cart</button>
+            </div>
+            <div class="product-card p10">
+                <img id="p10" src="./Products/MushroomSandwich.png" alt="Product Image">
+                <div class="product-name">Mushroom Sandwich <br> with Pickled Onion</div>
+                <div class="product-price">₹ 200/-</div>
+                <button class="add-to-cart-btn" onclick="addToCart('Mushroom Sandwich',200)">Add to Cart</button>
+            </div>
+            <div class="product-card p11">
+                <img id="p11" src="./Products/Paneer&Corn.png" alt="Product Image">
+                <div class="product-name">Cottage Cheese and Corn <br>Sandwich</div>
+                <div class="product-price">₹ 230/-</div>
+                <button class="add-to-cart-btn" onclick="addToCart('Cottage Cheese and Corn Sandwich',230)">Add to
+                    Cart</button>
+            </div>
+            <div class="product-card p12">
+                <img id="p12" src="./Products/Fries2.png" alt="Product Image">
+                <div class="product-name">Cheese Fries</div>
+                <div class="product-price">₹ 170/-</div>
+                <button class="add-to-cart-btn" onclick="addToCart('Cheese Fries',170)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div id="abtus">
+            <div id="abouttext">ABOUT US</div>
+            <div id="paraabt"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta necessitatibus dicta
+                expedita eveniet voluptatibus molestiae aut, doloribus, nihil distinctio fuga nobis nam adipisci quis
+                hic. Similique ex facilis dicta sapiente ipsum nulla accusantium sequi repellendus, magnam fugiat, ut
+                temporibus possimus ullam dolor veniam laboriosam dolorum quasi! Accusamus atque facilis repellendus
+                tempora itaque voluptatibus quibusdam consequuntur repellat ex, excepturi cumque, provident amet ullam
+                incidunt officia numquam, hic odit. Perspiciatis, inventore. Quibusdam dolores perferendis hic pariatur
+                ad ex atque cumque deleniti aliquid? Deleniti obcaecati nostrum alias reiciendis quibusdam dolor ipsam
+                quo tempora, minima aut natus exercitationem quisquam voluptas! Fugit, hic? Doloremque impedit iste
+                ipsum incidunt. Itaque impedit eos eaque culpa mollitia. Iure iusto quos, facere laboriosam, doloribus
+                ratione dolore fugit consequuntur architecto dignissimos mollitia deleniti soluta perspiciatis fugiat
+                sed ipsa doloremque. Culpa ullam modi enim. Praesentium veniam nobis impedit, eum cumque totam
+                voluptatum voluptas delectus dolorem consequatur corrupti temporibus obcaecati molestias cum optio sunt
+                excepturi perspiciatis facilis maxime, pariatur quisquam? Odit commodi nam totam quo, sequi quae quos,
+                ut dolore minima illo a. Ut earum voluptates dolore hic sequi laboriosam harum consequatur nisi facilis
+                quia debitis recusandae illo quas consectetur exercitationem omnis, expedita cumque, ab quae? Esse,
+                ducimus, itaque consequuntur fugit reiciendis cupiditate quam deleniti, fuga maiores earum repellat
+                quibusdam. Hic ipsum ipsa harum voluptatibus, adipisci id. Nobis voluptate numquam ad quis corrupti odio
+                maiores incidunt nulla a inventore deleniti qui dolore consectetur dolorem ab minus culpa veniam
+                laboriosam necessitatibus quibusdam asperiores, pariatur eligendi in blanditiis. Soluta explicabo, nihil
+                omnis est ad nisi animi possimus similique, a voluptates doloremque nam aliquid accusantium ipsum
+                nesciunt sequi nemo iusto, nostrum pariatur amet voluptas magni. Quidem dolorem vero quasi
+                exercitationem sit provident consequuntur nesciunt esse tenetur vitae? Iure necessitatibus nulla
+                corrupti at temporibus error praesentium, corporis atque eius architecto delectus libero esse, tenetur
+                dicta enim?</p></div>
+            <div id="logodiv"><img id="abtlogo" src="./Images/Coffee.png" alt="" ></div>
+            <button id="prod">Order</button>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            width: 100px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Invoice</h1>
+    <div id="invoiceDetails"></div>
+    <a href="landing.html" class="back-button">Go Back</a>
+
+    <script>
+        // Retrieve invoice data from sessionStorage
+        const invoiceData = JSON.parse(sessionStorage.getItem('invoice'));
+
+        if (invoiceData) {
+            const invoiceDetailsDiv = document.getElementById('invoiceDetails');
+            let invoiceHTML = `
+                <h2>Order Details</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Price (₹)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            invoiceData.cart.forEach(item => {
+                invoiceHTML += `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>₹${item.price.toFixed(2)}</td>
+                    </tr>
+                `;
+            });
+            invoiceHTML += `
+                    </tbody>
+                </table>
+                <div class="total">Total Amount: ₹${invoiceData.totalBill.toFixed(2)}</div>
+            `;
+            invoiceDetailsDiv.innerHTML = invoiceHTML;
+        } else {
+            document.getElementById('invoiceDetails').innerHTML = '<p>No invoice data available.</p>';
+        }
+    </script>
+</body>
+</html>
